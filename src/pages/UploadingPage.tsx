@@ -1,5 +1,5 @@
 import { Flex } from '@mantine/core';
-import StepperComponent from '../components/UploadFiles/StepperComponent';
+import UploadFiles from '../components/UploadFiles/UploadFiles';
 
 const UploadingPage = () => {
   return (
@@ -9,7 +9,7 @@ const UploadingPage = () => {
       align={'flex-start'}
       style={{ height: '100%', width: '100%' }}
     >
-      <StepperComponent />
+      <UploadFiles />
     </Flex>
   );
 };

@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import { Flex, Stepper } from '@mantine/core';
-import FileUpload from '../FileUpload';
-
 import FieldMapping from '../FieldMapping';
 import { useAppStore } from '../../store/store';
+import DropFiles from '../DropFiles/DropFiles';
 
-const StepperComponent = () => {
+const UploadFiles = () => {
   const [activeStep, setActiveStep] = useState(0);
   const uploadedData = useAppStore((s) => s.uploadedData);
   const setUploadedData = useAppStore((s) => s.setUploadedData);
@@ -21,7 +20,7 @@ const StepperComponent = () => {
   };
 
   return (
-    <Flex direction="column" style={{ height: '100%', width: '80%' }}>
+    <Flex direction="column" style={{ height: '100%', width: '80%' }} mx="auto">
       <Stepper
         active={activeStep}
         onStepClick={handleStepClick}
@@ -40,7 +39,7 @@ const StepperComponent = () => {
         </Stepper.Completed>
       </Stepper>
       {activeStep === 0 && (
-        <FileUpload
+        <DropFiles
           onNext={handleNext}
           onBack={activeStep > 0 ? handleBack : undefined}
           currentStep={activeStep}
@@ -52,4 +51,4 @@ const StepperComponent = () => {
   );
 };
 
-export default StepperComponent;
+export default UploadFiles;
