@@ -1,9 +1,9 @@
 import { Route, Routes } from 'react-router-dom';
 import Layout from './Layout/Layout';
 import EsriMap from './features/Map/EsriMap';
-
 import LandingPage from './pages/LandingPage';
 import UploadingPage from './pages/UploadingPage';
+import LoginPage from './pages/LoginPage';
 
 const Placeholder = ({ title }: { title: string }) => (
   <div
@@ -18,6 +18,7 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<LandingPage />} />
+        <Route path="login" element={<LoginPage />} />
         <Route path="citizen-science" element={<UploadingPage />} />
         <Route path="model" element={<Placeholder title="Risk Model" />} />
         <Route
