@@ -10,8 +10,8 @@ const DropFiles = ({
 }: {
   onNext: () => void;
   onBack?: () => void;
-  currentStep: number;
-  onFileUpload: (data: { [key: string]: unknown }[]) => void;
+  currentStep?: number;
+  onFileUpload?: (data: { [key: string]: unknown }[]) => void;
 }) => {
   const [error, setError] = useState<string | null>(null);
   const [fileType, setFileType] = useState<string>(MIME_TYPES.csv); // Default to CSV

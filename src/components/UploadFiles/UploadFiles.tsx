@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { Flex, Stepper } from '@mantine/core';
-import FileUpload from '../FileUpload';
-
 import FieldMapping from '../FieldMapping';
 import { useAppStore } from '../../store/store';
+import DropFiles from '../DropFiles/DropFiles';
 
 const UploadFiles = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -40,7 +39,7 @@ const UploadFiles = () => {
         </Stepper.Completed>
       </Stepper>
       {activeStep === 0 && (
-        <FileUpload
+        <DropFiles
           onNext={handleNext}
           onBack={activeStep > 0 ? handleBack : undefined}
           currentStep={activeStep}
