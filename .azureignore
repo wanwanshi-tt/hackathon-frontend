@@ -1,0 +1,10 @@
+node_modules
+**/*.map
+.git
+.github
+.vscode
+src
+public
+README.md
+package.json
+tsconfig*.json
