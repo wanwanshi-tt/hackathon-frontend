@@ -5,7 +5,7 @@ import FileUpload from '../FileUpload';
 import FieldMapping from '../FieldMapping';
 import { useAppStore } from '../../store/store';
 
-const StepperComponent = () => {
+const UploadFiles = () => {
   const [activeStep, setActiveStep] = useState(0);
   const uploadedData = useAppStore((s) => s.uploadedData);
   const setUploadedData = useAppStore((s) => s.setUploadedData);
@@ -21,7 +21,7 @@ const StepperComponent = () => {
   };
 
   return (
-    <Flex direction="column" style={{ height: '100%', width: '80%' }}>
+    <Flex direction="column" style={{ height: '100%', width: '80%' }} mx="auto">
       <Stepper
         active={activeStep}
         onStepClick={handleStepClick}
@@ -52,4 +52,4 @@ const StepperComponent = () => {
   );
 };
 
-export default StepperComponent;
+export default UploadFiles;

@@ -1,0 +1,10 @@
+.tab {
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.tab[data-active] {
+  background: var(--mantine-color-blue-0, #e7f5ff);
+}
