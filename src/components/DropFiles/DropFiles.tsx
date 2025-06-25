@@ -26,7 +26,7 @@ const DropFiles = ({
     setSuccess(false);
     setError(null);
     // Simulate API call
-    await new Promise((res) => setTimeout(res, 1200));
+    // await new Promise((res) => setTimeout(res, 1200));
     console.log('File uploaded:', file);
     setUploading(false);
     setSuccess(true);
