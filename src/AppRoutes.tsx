@@ -4,6 +4,7 @@ import EsriMap from './features/Map/EsriMap';
 import LandingPage from './pages/LandingPage';
 import UploadingPage from './pages/UploadingPage';
 import LoginPage from './pages/LoginPage';
+import { Title } from '@mantine/core';
 
 const Placeholder = ({ title }: { title: string }) => (
   <div
@@ -16,6 +17,7 @@ const Placeholder = ({ title }: { title: string }) => (
 const AppRoutes = () => {
   return (
     <Routes>
+      <Route path="/*" element={<Title>Maintenance</Title>} />
       <Route path="/" element={<Layout />}>
         <Route index element={<LandingPage />} />
         <Route path="login" element={<LoginPage />} />
