@@ -9,11 +9,15 @@ import {
 } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
 import { useAuthUser } from '../../hooks/useAuthUser';
+import { getTestData } from '../../api/test';
 
 const Header = () => {
   const navigate = useNavigate();
   const { user, loading } = useAuthUser();
   const principal = user?.clientPrincipal;
+
+  const data = getTestData();
+  console.log('Test Data:', data);
 
   return (
     <Paper
