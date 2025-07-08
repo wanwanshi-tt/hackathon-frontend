@@ -11,12 +11,13 @@ const EsriMap = () => {
 
   useEffect(() => {
     const layer1 = new GeoJSONLayer({
-      url: 'https://testblobadysh1243.blob.core.windows.net/maplayers/Yorkshire Water Appointed Wastewater Boundaries_2815270447174429793.geojson',
+      url: 'https://testblobadysh1243.blob.core.windows.net/maplayers/NW_Watercourse.geojson',
       outFields: ['*'],
       visible: true,
+      title: 'Northumbrian Water Watercourse', // Set the layer name
       popupEnabled: true,
       popupTemplate: {
-        title: 'Yorkshire Water Boundary',
+        title: 'Northumbrian Water Watercourse',
         content: (feature: {
           graphic: { attributes: Record<string, unknown> };
         }) => {
@@ -35,6 +36,7 @@ const EsriMap = () => {
       url: 'https://testblobadysh1243.blob.core.windows.net/maplayers/Northumbrian_Water_Storm_Overflow_Activity_2_view_1158731685660022164.geojson',
       outFields: ['*'],
       visible: true,
+      title: 'Northumbrian Water Storm Overflow', // Set the layer name
       popupEnabled: true,
       popupTemplate: {
         title: 'Northumbrian Water Storm Overflow',
