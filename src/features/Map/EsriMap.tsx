@@ -15,6 +15,14 @@ const EsriMap = () => {
       outFields: ['*'],
       visible: true,
       title: 'Northumbrian Water Watercourse', // Set the layer name
+      renderer: {
+        type: 'simple',
+        symbol: {
+          type: 'simple-line',
+          color: '#0077cc', // blue
+          width: 2,
+        },
+      },
       popupEnabled: true,
       popupTemplate: {
         title: 'Northumbrian Water Watercourse',
