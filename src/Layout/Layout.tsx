@@ -5,7 +5,14 @@ import DashboardTabs from '../components/DashBoardTabs/DashboardTabs';
 
 const Layout = () => {
   return (
-    <div style={{ height: '100vh', width: '100%', overflow: 'hidden' }}>
+    <div
+      style={{
+        height: '100vh',
+        width: '100%',
+        overflowY: 'auto',
+        overflowX: 'hidden',
+      }}
+    >
       <AppShell
         header={{ height: 60 }}
         transitionDuration={500}
@@ -14,7 +21,7 @@ const Layout = () => {
       >
         <Header />
         <DashboardTabs />
-        <AppShell.Main style={{ height: '100%', overflow: 'hidden' }} p={0}>
+        <AppShell.Main style={{ height: '100%', overflow: 'auto' }} p={0}>
           <div style={{ height: '100%' }}>
             <Outlet />
           </div>

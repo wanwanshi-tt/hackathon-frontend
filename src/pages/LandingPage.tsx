@@ -1,5 +1,3 @@
-import { Title } from '@mantine/core';
-
 const LandingPage = () => {
   return (
     <div
@@ -28,17 +26,6 @@ const LandingPage = () => {
           filter: 'brightness(0.85)',
         }}
       />
-      <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
-        <Title
-          style={{
-            color: '#228be6',
-            fontSize: 48,
-            textShadow: '0 2px 12px #fff8',
-          }}
-        >
-          Intro
-        </Title>
-      </div>
     </div>
   );
 };

@@ -65,7 +65,7 @@ const Header = () => {
           />
         </Title>
       </Group>
-      <Group>
+      <Group mr={20}>
         {loading ? (
           <Loader color="white" size="sm" />
         ) : principal ? (

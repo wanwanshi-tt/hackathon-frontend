@@ -42,7 +42,7 @@ const DashboardTabs = () => {
               style={{ width: '100%' }}
             >
               <Text size="xxl">🗺️</Text>
-              Interactive Map
+              Map
             </Group>
           </Tabs.Tab>
           <Tabs.Tab value="citizen-science" size="xxl" fw={700} p={0}>

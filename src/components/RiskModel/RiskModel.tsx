@@ -59,8 +59,8 @@ const dummyData = [
   },
 ];
 
-// Dummy map image for demonstration
-const MAP_IMAGE_URL = '/assets/images/newcastle_map_sample.png';
+// Dummy risk model image for demonstration
+const MAP_IMAGE_URL = '/assets/images/ExampleRM.png';
 
 const RiskBar = ({
   value,
@@ -92,24 +92,89 @@ const RiskBar = ({
   </div>
 );
 
+const legendItems = [
+  {
+    color: '#228be6',
+    label: 'Low Data Coverage',
+    icon: <IconQuestionMark size={18} color="#228be6" />,
+  },
+  {
+    color: '#40c057',
+    label: 'Sensitive Area',
+    icon: <IconDroplet size={18} color="#40c057" />,
+  },
+  {
+    color: '#faad14',
+    label: 'Recent Risk Indicator',
+    icon: <IconAlertTriangle size={18} color="#faad14" />,
+  },
+  {
+    color: '#ff6b6b',
+    label: 'Anomalous/Outlier',
+    icon: <IconMapPin size={18} color="#ff6b6b" />,
+  },
+];
+
 const RiskModel = () => {
   return (
     <Card shadow="md" p="lg" radius="md" withBorder w="70%" mx="auto" mt="xl">
       <Title order={3} mb="md" style={{ color: '#228be6' }}>
-        Risk Model Aspects
+        Risk Model
       </Title>
-      <img
-        src={MAP_IMAGE_URL}
-        alt="Newcastle Risk Map"
-        style={{
-          width: '100%',
-          maxWidth: 600,
-          borderRadius: 12,
-          margin: '0 auto 2rem auto',
-          display: 'block',
-          boxShadow: '0 2px 12px #0001',
-        }}
-      />
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 20 }}>
+        <img
+          src={MAP_IMAGE_URL}
+          alt="Newcastle Risk Map"
+          style={{
+            width: '100%',
+            maxWidth: 750,
+            borderRadius: 12,
+            margin: '0 0 2rem 0', // Remove auto margin to bring legend closer
+            display: 'block',
+            boxShadow: '0 2px 12px #0001',
+            flex: 1,
+          }}
+        />
+        <div
+          style={{
+            minWidth: 200,
+            marginTop: 0,
+            marginLeft: 0, // Increase negative margin to overlap legend closer to map
+            background: '#fff',
+            borderRadius: 10,
+            boxShadow: '0 2px 8px #0001',
+            padding: '18px 18px 12px 18px',
+            zIndex: 2,
+          }}
+        >
+          {legendItems.map((item, idx) => (
+            <div
+              key={idx}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 14,
+                marginBottom: 16,
+              }}
+            >
+              <ThemeIcon
+                variant="light"
+                size={38}
+                radius="md"
+                style={{ background: item.color + '22' }}
+              >
+                {item.icon}
+              </ThemeIcon>
+              <Text
+                size="md"
+                style={{ color: '#333', fontWeight: 500, fontSize: 18 }}
+              >
+                {item.label}
+              </Text>
+            </div>
+          ))}
+        </div>
+      </div>
       <Accordion variant="separated">
         {dummyData.map((aspect, idx) => (
           <Accordion.Item value={aspect.title} key={idx}>
