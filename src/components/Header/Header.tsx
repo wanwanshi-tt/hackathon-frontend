@@ -9,15 +9,11 @@ import {
 } from '@mantine/core';
 import { useNavigate } from 'react-router-dom';
 import { useAuthUser } from '../../hooks/useAuthUser';
-import { getTestData } from '../../api/test';
 
 const Header = () => {
   const navigate = useNavigate();
   const { user, loading } = useAuthUser();
   const principal = user?.clientPrincipal;
-
-  const data = getTestData();
-  console.log('Test Data:', data);
 
   return (
     <Paper
@@ -25,16 +21,50 @@ const Header = () => {
       p="md"
       bg="primary.9"
       style={{
-        height: 60,
+        height: 80,
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'space-between',
         color: 'white',
       }}
     >
-      <Title order={2} style={{ color: 'white', textAlign: 'center' }}>
-        Converter Tool
-      </Title>
+      <Group
+        style={{
+          alignItems: 'center',
+          gap: 12,
+          flexDirection: 'column',
+          justifyContent: 'center',
+          height: '100%',
+        }}
+      >
+        <img
+          src="/assets/images/logo_plain.png"
+          alt="Logo"
+          style={{
+            height: 80,
+            width: 120,
+            objectFit: 'contain',
+          }}
+        />
+        <Title
+          order={2}
+          style={{
+            color: 'white',
+            textAlign: 'center',
+            margin: 0,
+            height: 40,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <img
+            src="/assets/images/title.png"
+            alt="Aquawatch Logo"
+            style={{ maxHeight: 45 }}
+          />
+        </Title>
+      </Group>
       <Group>
         {loading ? (
           <Loader color="white" size="sm" />

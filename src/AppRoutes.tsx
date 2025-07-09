@@ -5,6 +5,7 @@ import LandingPage from './pages/LandingPage';
 import UploadingPage from './pages/UploadingPage';
 import LoginPage from './pages/LoginPage';
 import { Title } from '@mantine/core';
+import RiskModel from './components/RiskModel/RiskModel';
 
 const Placeholder = ({ title }: { title: string }) => (
   <div
@@ -22,7 +23,7 @@ const AppRoutes = () => {
         <Route index element={<LandingPage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="citizen-science" element={<UploadingPage />} />
-        <Route path="model" element={<Placeholder title="Risk Model" />} />
+        <Route path="model" element={<RiskModel />} />
         <Route
           path="environmental-data"
           element={<Placeholder title="Environmental Data" />}
