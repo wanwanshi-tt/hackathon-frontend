@@ -11,7 +11,7 @@ const ICON_URLS: Record<string, string> = {
 
 // Create a GeoJSONLayer for dummy Newcastle points with icon renderer
 export const dummyPointsLayer = new GeoJSONLayer({
-  url: '/esri/dummy_points.geojson',
+  url: 'esri/dummy_points.geojson',
   title: 'Risk Area (Newcastle)',
   outFields: ['*'],
   visible: true,
