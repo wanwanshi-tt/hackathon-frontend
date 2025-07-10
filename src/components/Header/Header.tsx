@@ -61,7 +61,7 @@ const Header = () => {
           <img
             src="/assets/images/title.png"
             alt="Aquawatch Logo"
-            style={{ maxHeight: 45 }}
+            style={{ maxHeight: 40 }}
           />
         </Title>
       </Group>

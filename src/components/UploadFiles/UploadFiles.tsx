@@ -1,12 +1,11 @@
 import { useState } from 'react';
-import { Flex, Stepper } from '@mantine/core';
-import FieldMapping from '../FieldMapping';
+import { Flex, Stepper, Button } from '@mantine/core';
+
 import { useAppStore } from '../../store/store';
 import DropFiles from '../DropFiles/DropFiles';
 
 const UploadFiles = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const uploadedData = useAppStore((s) => s.uploadedData);
   const setUploadedData = useAppStore((s) => s.setUploadedData);
 
   const handleNext = () => setActiveStep((prev) => Math.min(prev + 1, 2));
@@ -28,12 +27,15 @@ const UploadFiles = () => {
         m="1.5rem auto"
         p="1rem"
       >
-        <Stepper.Step label="Upload File" description="Upload your file" />
-        <Stepper.Step label="Map Field" description="Map fields to data" />
         <Stepper.Step
-          label="Edit and Preview"
-          description="Edit and preview data"
+          label="Upload Photo or Video"
+          description="Upload your media file"
         />
+        <Stepper.Step
+          label="Validate & Confirm"
+          description="AI validates, you confirm info"
+        />
+        <Stepper.Step label="Submit & Finish" description="Submit and finish" />
         <Stepper.Completed>
           <div>All steps completed - you're finished!</div>
         </Stepper.Completed>
@@ -46,7 +48,25 @@ const UploadFiles = () => {
           onFileUpload={setUploadedData}
         />
       )}
-      {activeStep === 1 && <FieldMapping uploadedData={uploadedData} />}
+      {activeStep === 1 && (
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <h2>AI Validation & User Confirmation</h2>
+          <p>
+            AI will extract and validate information from your photo or video.
+            <br />
+            Please review and confirm the details before submitting.
+          </p>
+          <Button onClick={handleNext} mt="lg">
+            Confirm & Continue
+          </Button>
+        </div>
+      )}
+      {activeStep === 2 && (
+        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+          <h2>Submit & Finish</h2>
+          <p>Your upload and confirmation are complete. Thank you!</p>
+        </div>
+      )}
     </Flex>
   );
 };

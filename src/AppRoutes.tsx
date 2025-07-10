@@ -6,14 +6,7 @@ import UploadingPage from './pages/UploadingPage';
 import LoginPage from './pages/LoginPage';
 import { Title } from '@mantine/core';
 import RiskModel from './components/RiskModel/RiskModel';
-
-const Placeholder = ({ title }: { title: string }) => (
-  <div
-    style={{ padding: 40, textAlign: 'center', fontSize: 32, fontWeight: 700 }}
-  >
-    {title}
-  </div>
-);
+import EnvData from './components/EnvData/EnvData';
 
 const AppRoutes = () => {
   return (
@@ -24,10 +17,7 @@ const AppRoutes = () => {
         <Route path="login" element={<LoginPage />} />
         <Route path="citizen-science" element={<UploadingPage />} />
         <Route path="model" element={<RiskModel />} />
-        <Route
-          path="environmental-data"
-          element={<Placeholder title="Environmental Data" />}
-        />
+        <Route path="environmental-data" element={<EnvData />} />
         <Route path="map" element={<EsriMap />} />
       </Route>
     </Routes>

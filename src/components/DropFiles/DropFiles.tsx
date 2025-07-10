@@ -1,5 +1,5 @@
-import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
-import { Text, Group, Button, Notification, Radio } from '@mantine/core';
+import { Dropzone } from '@mantine/dropzone';
+import { Text, Group, Button, Notification } from '@mantine/core';
 import { useState } from 'react';
 import { CheckIcon } from '@mantine/core';
 import classes from './DropFiles.module.css';
@@ -14,8 +14,7 @@ const DropFiles = ({
   onFileUpload?: (data: { [key: string]: unknown }[]) => void;
 }) => {
   const [error, setError] = useState<string | null>(null);
-  const [fileType, setFileType] = useState<string>(MIME_TYPES.csv); // Default to CSV
-  const [isFileValid, setIsFileValid] = useState<boolean>(false); // Track file validation
+  const [isFileValid, setIsFileValid] = useState<boolean>(false);
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [uploading, setUploading] = useState<boolean>(false);
   const [success, setSuccess] = useState<boolean>(false);
@@ -34,19 +33,15 @@ const DropFiles = ({
   };
 
   const handleDrop = (files: File[]) => {
-    const maxSize = 3 * 1024 ** 2; // 3MB
+    const maxSize = 20 * 1024 ** 2; // 20MB for photo/video
     for (const file of files) {
-      if (file.type !== fileType) {
-        setError(
-          `Invalid file type. Please upload a ${
-            fileType === MIME_TYPES.csv ? 'CSV' : 'XLSX'
-          } file.`,
-        );
+      if (!file.type.startsWith('image/') && !file.type.startsWith('video/')) {
+        setError('Invalid file type. Please upload a photo or video file.');
         setIsFileValid(false);
         return;
       }
       if (file.size > maxSize) {
-        setError('File size exceeds the 3MB limit.');
+        setError('File size exceeds the 20MB limit.');
         setIsFileValid(false);
         return;
       }
@@ -78,26 +73,20 @@ const DropFiles = ({
       )}
       <div className={classes.header}>
         <Text size="xl" fw={700} style={{ color: '#228be6' }}>
-          Upload Your File
+          Upload Your Photo or Video
         </Text>
         <Text size="sm" style={{ color: '#555' }}>
-          Select a file type and upload your CSV or XLSX file below.
+          Drag and drop or browse to upload a photo or video file (max 20MB).
         </Text>
       </div>
       <div className={classes.uploadGroup}>
-        <div style={{ marginBottom: '1rem' }}>
-          <Text>Select File Type:</Text>
-          <Radio.Group value={fileType} onChange={setFileType} name="file-type">
-            <Group gap="md">
-              <Radio value={MIME_TYPES.csv} label="CSV" />
-              <Radio value={MIME_TYPES.xlsx} label="XLSX" />
-            </Group>
-          </Radio.Group>
-        </div>
         <Dropzone
           onDrop={handleDrop}
-          accept={[MIME_TYPES.csv, MIME_TYPES.xlsx]}
-          maxSize={3 * 1024 ** 2}
+          accept={{
+            'image/*': [],
+            'video/*': [],
+          }}
+          maxSize={20 * 1024 ** 2}
           styles={{
             root: {
               border: '2px dashed #228be6',
@@ -118,10 +107,7 @@ const DropFiles = ({
               gap: '1.5rem',
             }}
           >
-            <Text size="lg">
-              Drag and drop your {fileType === MIME_TYPES.csv ? 'CSV' : 'XLSX'}{' '}
-              file here
-            </Text>
+            <Text size="lg">Drag and drop your photo or video file here</Text>
             <Button size="sm">Browse Files</Button>
           </Group>
         </Dropzone>

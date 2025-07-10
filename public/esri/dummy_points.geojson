@@ -1,0 +1,398 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.60639, 54.86781]
+      },
+      "properties": {
+        "name": "Photo Location 1",
+        "icon": "camera",
+        "description": "Sample photo location with camera icon (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.82367, 54.62399]
+      },
+      "properties": {
+        "name": "Sensitive Area 1",
+        "icon": "droplet",
+        "description": "Sensitive area with droplet icon (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.91822, 55.68549]
+      },
+      "properties": {
+        "name": "Alert Location 1",
+        "icon": "alert",
+        "description": "Alert location with alert icon (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.89299, 55.65413]
+      },
+      "properties": {
+        "name": "Pin Location 1",
+        "icon": "pin",
+        "description": "Pin location with pin icon (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.44528, 54.96729]
+      },
+      "properties": {
+        "name": "Photo Location 2",
+        "icon": "camera",
+        "description": "Sample photo location 2 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.40218, 54.96798]
+      },
+      "properties": {
+        "name": "Sensitive Area 2",
+        "icon": "droplet",
+        "description": "Sensitive area 2 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.15202, 55.0691]
+      },
+      "properties": {
+        "name": "Alert Location 2",
+        "icon": "alert",
+        "description": "Alert location 2 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.13616, 55.01128]
+      },
+      "properties": {
+        "name": "Pin Location 2",
+        "icon": "pin",
+        "description": "Pin location 2 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.12418, 55.03067]
+      },
+      "properties": {
+        "name": "Photo Location 3",
+        "icon": "camera",
+        "description": "Sample photo location 3 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.10014, 55.23102]
+      },
+      "properties": {
+        "name": "Sensitive Area 3",
+        "icon": "droplet",
+        "description": "Sensitive area 3 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.09028, 54.77136]
+      },
+      "properties": {
+        "name": "Alert Location 3",
+        "icon": "alert",
+        "description": "Alert location 3 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.99053, 54.5753]
+      },
+      "properties": {
+        "name": "Pin Location 3",
+        "icon": "pin",
+        "description": "Pin location 3 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.75315, 54.98192]
+      },
+      "properties": {
+        "name": "Photo Location 4",
+        "icon": "highRisk",
+        "description": "Sample photo location 4 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.626, 54.968]
+      },
+      "properties": {
+        "name": "Sensitive Area 4",
+        "icon": "droplet",
+        "description": "Sensitive area 4 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.628, 54.967]
+      },
+      "properties": {
+        "name": "Alert Location 4",
+        "icon": "alert",
+        "description": "Alert location 4 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.63, 54.966]
+      },
+      "properties": {
+        "name": "Pin Location 4",
+        "icon": "pin",
+        "description": "Pin location 4 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.632, 54.965]
+      },
+      "properties": {
+        "name": "Photo Location 5",
+        "icon": "camera",
+        "description": "Sample photo location 5 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.634, 54.964]
+      },
+      "properties": {
+        "name": "Sensitive Area 5",
+        "icon": "droplet",
+        "description": "Sensitive area 5 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.636, 54.963]
+      },
+      "properties": {
+        "name": "Alert Location 5",
+        "icon": "alert",
+        "description": "Alert location 5 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.638, 54.962]
+      },
+      "properties": {
+        "name": "Pin Location 5",
+        "icon": "pin",
+        "description": "Pin location 5 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.31206, 54.77636]
+      },
+      "properties": {
+        "name": "Sensitive Area 4",
+        "icon": "droplet",
+        "description": "Sensitive area 4 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.2509, 54.62539]
+      },
+      "properties": {
+        "name": "Alert Location 4",
+        "icon": "alert",
+        "description": "Alert location 4 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.00362, 55.76234]
+      },
+      "properties": {
+        "name": "Pin Location 4",
+        "icon": "pin",
+        "description": "Pin location 4 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-2.0048, 55.76658]
+      },
+      "properties": {
+        "name": "Photo Location 5",
+        "icon": "camera",
+        "description": "Sample photo location 5 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.71687, 54.96675]
+      },
+      "properties": {
+        "name": "Sensitive Area 4",
+        "icon": "droplet",
+        "description": "Sensitive area 4 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.66981, 54.96501]
+      },
+      "properties": {
+        "name": "Alert Location 4",
+        "icon": "alert",
+        "description": "Alert location 4 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.64328, 54.95858]
+      },
+      "properties": {
+        "name": "Pin Location 4",
+        "icon": "pin",
+        "description": "Pin location 4 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.63891, 54.96029]
+      },
+      "properties": {
+        "name": "Photo Location 5",
+        "icon": "camera",
+        "description": "Sample photo location 5 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.62405, 54.9593]
+      },
+      "properties": {
+        "name": "Sensitive Area 5",
+        "icon": "droplet",
+        "description": "Sensitive area 5 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.74528, 54.98168]
+      },
+      "properties": {
+        "name": "Alert Location 5",
+        "icon": "alert",
+        "description": "Alert location 5 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.68212, 54.96571]
+      },
+      "properties": {
+        "name": "Pin Location 5",
+        "icon": "pin",
+        "description": "Pin location 5 (Newcastle)"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-1.58324, 54.96766]
+      },
+      "properties": {
+        "name": "Extra Dummy Location",
+        "icon": "camera",
+        "description": "Extra dummy location from Northumbrian Water data"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [-1.69452, 54.97] },
+      "properties": {
+        "name": "Next Dummy Location",
+        "icon": "camera",
+        "description": "Next dummy location from Northumbrian Water data"
+      }
+    }
+  ]
+}

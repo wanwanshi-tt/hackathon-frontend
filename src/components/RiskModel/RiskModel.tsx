@@ -92,36 +92,64 @@ const RiskBar = ({
   </div>
 );
 
-const legendItems = [
-  {
-    color: '#228be6',
-    label: 'Low Data Coverage',
-    icon: <IconQuestionMark size={18} color="#228be6" />,
-  },
-  {
-    color: '#40c057',
-    label: 'Sensitive Area',
-    icon: <IconDroplet size={18} color="#40c057" />,
-  },
-  {
-    color: '#faad14',
-    label: 'Recent Risk Indicator',
-    icon: <IconAlertTriangle size={18} color="#faad14" />,
-  },
-  {
-    color: '#ff6b6b',
-    label: 'Anomalous/Outlier',
-    icon: <IconMapPin size={18} color="#ff6b6b" />,
-  },
-];
-
 const RiskModel = () => {
   return (
-    <Card shadow="md" p="lg" radius="md" withBorder w="70%" mx="auto" mt="xl">
+    <Card
+      shadow="md"
+      p="lg"
+      radius="md"
+      withBorder
+      w="80%"
+      mx="auto"
+      mt="xl"
+      h="100%"
+    >
       <Title order={3} mb="md" style={{ color: '#228be6' }}>
         Risk Model
       </Title>
-      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 20 }}>
+      <div style={{ display: 'flex', alignItems: 'flex-start', gap: 32 }}>
+        {/* Accordions on the left */}
+        <div style={{ minWidth: 420, maxWidth: 600, flex: '0 0 420px' }}>
+          <Accordion variant="separated">
+            {dummyData.map((aspect, idx) => (
+              <Accordion.Item value={aspect.title} key={idx}>
+                <Accordion.Control
+                  icon={
+                    <ThemeIcon variant="light" size={40} radius="xl">
+                      {aspect.icon}
+                    </ThemeIcon>
+                  }
+                >
+                  <Group>
+                    <Text fw={600}>{aspect.title}</Text>
+                    <Badge color="red" variant="light" size="md">
+                      {aspect.highRisk.length} high risk
+                    </Badge>
+                  </Group>
+                </Accordion.Control>
+                <Accordion.Panel>
+                  <Text size="sm" c="dimmed" mb="xs">
+                    {aspect.description}
+                  </Text>
+                  <List spacing="xs" size="sm">
+                    {aspect.highRisk.map((item, i) => (
+                      <List.Item key={i}>
+                        <Group>
+                          <Text fw={500}>{item.name}</Text>
+                          <RiskBar value={item.value} />
+                          <Text size="xs" c="red">
+                            {item.value}
+                          </Text>
+                        </Group>
+                      </List.Item>
+                    ))}
+                  </List>
+                </Accordion.Panel>
+              </Accordion.Item>
+            ))}
+          </Accordion>
+        </div>
+        {/* Map on the right */}
         <img
           src={MAP_IMAGE_URL}
           alt="Newcastle Risk Map"
@@ -129,90 +157,13 @@ const RiskModel = () => {
             width: '100%',
             maxWidth: 750,
             borderRadius: 12,
-            margin: '0 0 2rem 0', // Remove auto margin to bring legend closer
+            margin: '0 0 2rem 0',
             display: 'block',
             boxShadow: '0 2px 12px #0001',
             flex: 1,
           }}
         />
-        <div
-          style={{
-            minWidth: 200,
-            marginTop: 0,
-            marginLeft: 0, // Increase negative margin to overlap legend closer to map
-            background: '#fff',
-            borderRadius: 10,
-            boxShadow: '0 2px 8px #0001',
-            padding: '18px 18px 12px 18px',
-            zIndex: 2,
-          }}
-        >
-          {legendItems.map((item, idx) => (
-            <div
-              key={idx}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 14,
-                marginBottom: 16,
-              }}
-            >
-              <ThemeIcon
-                variant="light"
-                size={38}
-                radius="md"
-                style={{ background: item.color + '22' }}
-              >
-                {item.icon}
-              </ThemeIcon>
-              <Text
-                size="md"
-                style={{ color: '#333', fontWeight: 500, fontSize: 18 }}
-              >
-                {item.label}
-              </Text>
-            </div>
-          ))}
-        </div>
       </div>
-      <Accordion variant="separated">
-        {dummyData.map((aspect, idx) => (
-          <Accordion.Item value={aspect.title} key={idx}>
-            <Accordion.Control
-              icon={
-                <ThemeIcon variant="light" size={40} radius="xl">
-                  {aspect.icon}
-                </ThemeIcon>
-              }
-            >
-              <Group>
-                <Text fw={600}>{aspect.title}</Text>
-                <Badge color="red" variant="light" size="md">
-                  {aspect.highRisk.length} high risk
-                </Badge>
-              </Group>
-            </Accordion.Control>
-            <Accordion.Panel>
-              <Text size="sm" c="dimmed" mb="xs">
-                {aspect.description}
-              </Text>
-              <List spacing="xs" size="sm">
-                {aspect.highRisk.map((item, i) => (
-                  <List.Item key={i}>
-                    <Group>
-                      <Text fw={500}>{item.name}</Text>
-                      <RiskBar value={item.value} />
-                      <Text size="xs" c="red">
-                        {item.value}
-                      </Text>
-                    </Group>
-                  </List.Item>
-                ))}
-              </List>
-            </Accordion.Panel>
-          </Accordion.Item>
-        ))}
-      </Accordion>
     </Card>
   );
 };
